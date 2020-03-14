@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Checkboxes were selected
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="checkbox-list">have a another go</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Checkboxes were selected
+    </h1>
+    <p>
+      Yay
+    </p>
+    <p>checkboxes named <code>people-named-john =</code> <code style="background: #f0f0f0; padding:3px; border:lightgrey 1px solid;">{{ data['people-named-john']}}</code></p>
+
+  </div>
+</div>
+
+{% endblock %}

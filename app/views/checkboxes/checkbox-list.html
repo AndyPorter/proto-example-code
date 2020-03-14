@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Select people named John
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="checkbox-routing-index">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="checkbox-branching-route" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                Which people are named John?
+              </h1>
+            </legend>
+            <span id="waste-hint" class="govuk-hint">
+              Select all that apply.
+            </span>
+            <div class="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="person-1" name="people-named-john" type="checkbox" value="jonathon-brown">
+                <label class="govuk-label govuk-checkboxes__label" for="person-1">
+                  Jonathon Brown
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="person-2" name="people-named-john" type="checkbox" value="johnny-blue">
+                <label class="govuk-label govuk-checkboxes__label" for="person-2">
+                  Johnny Blue
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="person-3" name="people-named-john" type="checkbox" value="david-jonno-johnson">
+                <label class="govuk-label govuk-checkboxes__label" for="person-3">
+                  David 'Jonno' Johnson
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

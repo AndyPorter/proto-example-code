@@ -1,0 +1,63 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Checkbox routing
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/index">Home</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Branching dependent on checkboxes
+    </h1>
+
+    <p class="govuk-body-l">
+      If one or more checkboxes are checked branch to page a, if no checkboxes are checked branch to page b.
+    </p>
+
+    <p>
+      Idea/need from Ros - a list of existing people is displayed, the user selects all the people who meet the cirteria.  If no one is selected when the page is sumbitted take the user to a page where they can add a new person.
+    </p>
+
+    <p>
+      Previous designs asked the user to 1) tick another checkbox if none of the existing people met the criteria, and 2) a link to add another person to the list.  Testing the new idea with users seems to work better, so we now need to make something more realistic - that can be used without intervention
+    </p>
+
+    <p>
+      Challenges for us are:
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the list of people is built dynamically - so we don't know how many checkboxes will be on the page - between 1 and 4</li>
+        <li>we don't have a working example to copy/adapt - the kit has <a href="docs/examples/branching">a branching example for a radio group</a></li>
+      </ul>
+    </p>
+
+    <p>
+      We don't know if its better to do the work all server side (in the routes file) - our preference, for consistency with other logic. Or to do some work client side - perhaps a script that runs onsubmit of the page setting a hidden variable if any checkboxes are checked - which can then be read server side to route to page a or b.  For a protoype it doesnt matter as long as it works - but its better if its consistent and easy for others to follow
+    </p>
+
+    <h2 class="govuk-heading-l">
+      Try it
+    </h2>
+    <p>
+      <a class="govuk-link" href="checkbox-list">checkbox list of people</a>
+    </p>
+    <p>full notes on how the routing code works are in the routes.js file</p>
+    <p>ToDo:
+      <ul class="govuk-list govuk-list--bullet">
+        <li><del>make a working version with three checkbox</del></li>
+        <li><del>build the number of checkboxes in the list dynamically (between 1 and 4) - as its currently hard coded</del></li>    
+        <li>get Ros to try it in her prototype</li>     
+      </ul>
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}

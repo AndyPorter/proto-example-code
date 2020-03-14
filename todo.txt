@@ -1,5 +1,4 @@
 todo:
 
-- routing dependent on checkbox content - if one or more checkboxes are checked
 - autocomplete (accessible) - look at Adam Silver, Heydon Pickering, alpahgov and NHS.  https://github.com/alphagov/accessible-autocomplete
 - search - look at NHS
