@@ -1,0 +1,50 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Autocomplete
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/index">Home</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Autocomplete
+    </h1>
+
+    <p class="govuk-body-l">
+      Accessible autocompletes
+    </p>
+
+    <p>
+      Seen a few. <a href="https://alphagov.github.io/accessible-autocomplete/">Alphagov accessible autocomplete</a> (but not in gov design system as published), NHS uses same code for their service manual search. Adam Silver? 
+    </p>
+
+    <p>Note: you'll need to install xcode (8Gb download) and open/installl it, before npm install accessible-autocomplete
+    </p>
+
+<!--     <p>our use: make a template picker.  user needs to pick a template doc to use, the templates are known by name and a short code.  e.g. ABT01, A big template 001, ABT002 another big template 002.  users know the regular ones by code.  Allow people to enter the short code, or part of the full name to filter a short list down and pick one.
+    <p> -->
+
+    <p>this example, build from Adams book, is nice with the frequntly used buttons (source). https://codepen.io/dsenneff/pen/PoqONrO  In our scenario, wo could offer the most likely - top 3 or 5.
+    </p>
+
+
+    <h2 class="govuk-heading-l">
+      Try it
+    </h2>
+    <p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="autocomplete">autocomplete</a> from alphagov.  <a href="https://alphagov.github.io/accessible-autocomplete/examples/">examples</a></li>
+      </ul>
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}
