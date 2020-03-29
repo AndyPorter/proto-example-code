@@ -5,7 +5,8 @@ a copy of version 9.6.0 of the kit.  Get the latest [prototype kit and instructi
 
 ## contains
 
-branching dependent on checkbox content - if one or more checkboxes are checked
+- branching dependent on checkbox content - if one or more checkboxes are checked
+- accessible autocomplete
 
 
 ## ideas [todo](todo.txt)

@@ -1,0 +1,51 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Autocomplete
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/index">Home</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Autocomplete
+    </h1>
+
+    <p class="govuk-body-l">
+      Accessible autocompletes
+    </p>
+
+    <p>
+      Seen a few autocompletes, but nothing published in a gov design system. <a href="https://alphagov.github.io/accessible-autocomplete/">Alphagov accessible autocomplete</a> (Adam Silver) seems like the front runner and NHS uses it for their service manual search.
+    </p>
+
+    <p>Alphagov accessible autocomplete <a href="https://github.com/alphagov/accessible-autocomplete">source code and instructions on use</a>, and <a href="https://alphagov.github.io/accessible-autocomplete/examples/">examples</a></p>
+
+    <!-- <p>Note: you'll need to install xcode (8Gb download) and open/install it, before npm install accessible-autocomplete -->
+    </p>
+
+<!--     <p>our use: make a template picker.  user needs to pick a template doc to use, the templates are known by name and a short code.  e.g. ABT01, A big template 001, ABT002 another big template 002.  users know the regular ones by code.  Allow people to enter the short code, or part of the full name to filter a short list down and pick one.
+    <p> -->
+
+
+    <h2 class="govuk-heading-l">
+      Try them out
+    </h2>
+    <p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="autocomplete">alpha gov accessible autocomplete - progressive enhanced (recommended)</a></li>
+        <li><a href="autocomplete-basic">alpha gov accessible autocomplete - basic</a></li>
+        <li><a href="autocomplete-dsennef">extended version of Adam Silvers accessible autocomplete</a> - extended with shortcut buttons, by Darin Senneff (@dsenneff) (<a href="https://codepen.io/dsenneff/pen/PoqONrO">source</a>)</li>
+      </ul>
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}
