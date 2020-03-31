@@ -7,6 +7,7 @@ a copy of version 9.6.0 of the kit.  Get the latest [prototype kit and instructi
 
 - branching dependent on checkbox content - if one or more checkboxes are checked
 - accessible autocomplete
+- session data - viewing whats stored, and setting data - so can run preset scenarios
 
 
 ## ideas [todo](todo.txt)
