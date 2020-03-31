@@ -51,29 +51,70 @@
 </code></pre>
       </script>
     </p>
+    <p> To do inline highlighting rather than code block, leave out the pre tag, and escape html entities like &lt; &gt; &#123; &#125; like this</p>
+    <p>inline html: 
+      <code class="language-markup">
+        &lt;p class="my-class"&gt;paragraph text&lt;/p class="my-class"&gt;
+      </code>
+      <pre><code class="language-markup"><!--
+<code class="language-markup">
+&lt;p class="my-class"&gt;paragraph text&lt;/p class="my-class"&gt;
+</code>
+      --></code></pre>
+    </p>
+    or
+    <p>inline script 
+        <code class="language-markup">&lt;script src="/url-to-js-file.js"&gt;&lt;/script&gt;</code>
+      <pre><code class="language-markup"><!--
+<code class="language-markup">
+&lt;script src="/url-to-js-file.js"&gt;&lt;/script&gt;
+</code>
+      --></code></pre>
+    </p>
 
-    <p> To do inline highlighting rather than code block, leave out the pre tag</p>
-    <p>for html though (and you'll need a plugin for client side prism script) you need to use a script tag, not a pre and code tag like this:
+    <p>for html - if you don't want to escape your html entities (as we are running the script client side after the html is served), or if your code includes comments, you'll need a plugin.</p>
+    <p>With the <a href="https://prismjs.com/plugins/unescaped-markup/">Unescaped markup plugin</a> you can output unescaped html in two ways like this:
+
       <script type="text/plain" class="language-markup">
-<script type="text/plain" class="language-markup">
-  <h2 class="govuk-heading-l">
-  Try them out
-  </h2>
-  <p>
-  <ul class="govuk-list govuk-list--bullet">
-    <li><a href="autocomplete">alpha gov accessible autocomplete - progressive enhanced (recommended)</a></li>
-    <li><a href="autocomplete-basic">alpha gov accessible autocomplete - basic</a></li>
-    <li><a href="autocomplete-dsennef">extended version of Adam Silvers accessible autocomplete</a> - extended with shortcut buttons, by Darin Senneff (@dsenneff) (<a href="https://codepen.io/dsenneff/pen/PoqONrO">source</a>)</li>
-  </ul>
-  </p>
-&lt;/script&gt;
+<pre><code class="language-markup"><!--
+  <p>your html goes here wrapped in a comment - 
+  (as long as it doesn't include comments).</p>
+  <p>The start and end of the comment need to be  
+  on the pre/code tag lines, as show here</p>
+--></code></pre>
       </script>
 
-      <h2 class="govuk-heading-l">examples</h2>
+      <script type="text/plain" class="language-markup">
+<script type="text/plain" class="language-markup">
+  <p>your html goes here</p>
+&lt;/script&gt;
+      </script>
+    </p>
 
-      <h3 class="govuk-heading-m">html</h3>
+    <h2 class="govuk-heading-l">examples</h2>
+    <p class="govuk-body">look at the page source (not the inspector view), here (line 181 onward) or in <a href="https://github.com/AndyPorter/proto-example-code/blob/master/app/views/syntax-highlighting/index.html">github</a> (line 72 onwards), and copy it</p>
 
-    <script type="text/plain" class="language-markup">
+    <h3 class="govuk-heading-m">html - that includes comments - use script tag</h3>
+
+    <p>
+      <script type="text/plain" class="language-markup">
+<h2 class="govuk-heading-l">
+Try them out
+</h2>
+<!-- <p>commented out html</p> -->
+<p>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="autocomplete">alpha gov accessible autocomplete - progressive enhanced (recommended)</a></li>
+  <li><a href="autocomplete-basic">alpha gov accessible autocomplete - basic</a></li>
+  <li><a href="autocomplete-dsennef">extended version of Adam Silvers accessible autocomplete</a> - extended with shortcut buttons, by Darin Senneff (@dsenneff) (<a href="https://codepen.io/dsenneff/pen/PoqONrO">source</a>)</li>
+</ul>
+</p>
+      </script>
+    </p>
+
+    <h3 class="govuk-heading-m">html - that has no comments, can use pre and code tags</h3>
+    <p>
+      <pre><code class="language-markup"><!-- 
 <h2 class="govuk-heading-l">
 Try them out
 </h2>
@@ -83,30 +124,33 @@ Try them out
   <li><a href="autocomplete-basic">alpha gov accessible autocomplete - basic</a></li>
   <li><a href="autocomplete-dsennef">extended version of Adam Silvers accessible autocomplete</a> - extended with shortcut buttons, by Darin Senneff (@dsenneff) (<a href="https://codepen.io/dsenneff/pen/PoqONrO">source</a>)</li>
 </ul>
-</p>
-    </script>
+</p> 
+--></code></pre>
+    </p>
 
-      <h3 class="govuk-heading-m">css</h3>
-
-    <pre><code class="language-css">
-/*! Copyright (c) 2011 by Margaret Calvert & Henrik Kubel. All rights reserved. The font has been customised for exclusive use on gov.uk. This cut is not commercially available. */
-@font-face {
-  font-family: "GDS Transport";
-  src: url("/govuk/assets/fonts/light-94a07e06a1-v2.woff2") format("woff2"), url("/govuk/assets/fonts/light-f591b13f7d-v2.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: fallback;
+    <h3 class="govuk-heading-m">css</h3>
+    <p>
+      <pre><code class="language-css">
+.govuk-list {
+  font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #0b0c0c;
+  margin-top: 0;
+  margin-bottom: 15px;
+  padding-left: 0;
+  list-style-type: none;
 }
+      </code></pre>
+    </p>
 
-@media print {
-  .govuk-link, a, .app-step-nav-header__title, .app-step-nav-related__link {
-    font-family: sans-serif;
-  }
-}
-    </code></pre>
+    <h3 class="govuk-heading-m">javascript</h3>
 
-      <h3 class="govuk-heading-m">javascript</h3>
-
+    <p>
       <pre><code class="language-js">
 router.get('/docs/examples/pass-data/vehicle-registration-car1', function (req, res) {
 req.session.data = {
@@ -119,7 +163,64 @@ req.session.data = {
 }
   res.redirect('vehicle-registration')
 })
-    </code></pre>
+      </code></pre>
+    </p>
+
+    <h3 class="govuk-heading-m">plugins i chose</h3>
+
+    <h4><a href="https://prismjs.com/plugins/line-highlight/">line highlight</a></h4>
+    <p>highlight specific lines.  note add class and attribute to the pre tag not the code tag</p>
+    <p>line 2
+
+    <pre data-line="2" class="language-js"><code >
+router.get('/docs/examples/pass-data/vehicle-registration-car1', function (req, res) {
+req.session.data = {
+  "vehicle-registration": "test-plate",
+  "vehicle-type": "Car",
+  "vehicle-features": [
+    "Heated seats",
+    "Radio"
+  ]
+}
+  res.redirect('vehicle-registration')
+})
+      </code></pre>
+    </p>
+
+    <p>lines 3-10
+
+    <pre data-line="3-10" class="language-js"><code >
+router.get('/docs/examples/pass-data/vehicle-registration-car1', function (req, res) {
+req.session.data = {
+  "vehicle-registration": "test-plate",
+  "vehicle-type": "Car",
+  "vehicle-features": [
+    "Heated seats",
+    "Radio"
+  ]
+}
+  res.redirect('vehicle-registration')
+})
+      </code></pre>
+  </p>
+
+    <h4><a href="https://prismjs.com/plugins/line-numbers/">line numbers</a></h4>
+    <p>lines numbers.  note add class and attributes to the pre tag not the code tag</p>
+    <p>
+
+    <pre  class="language-markup line-numbers"><code ><!--<h2 class="govuk-heading-l">
+Try them out
+</h2>
+<p>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="autocomplete">alpha gov accessible autocomplete - progressive enhanced (recommended)</a></li>
+  <li><a href="autocomplete-basic">alpha gov accessible autocomplete - basic</a></li>
+  <li><a href="autocomplete-dsennef">extended version of Adam Silvers accessible autocomplete</a> - extended with shortcut buttons, by Darin Senneff (@dsenneff) (<a href="https://codepen.io/dsenneff/pen/PoqONrO">source</a>)</li>
+</ul>
+</p> 
+--></code></pre>
+    </p>
+
 
   </div>
 </div>
