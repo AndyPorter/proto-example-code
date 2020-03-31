@@ -1,0 +1,131 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Syntax Highlighting
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/index">Home</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Syntax Highlighting
+    </h1>
+
+    <p>
+      Want to be able to show people bits of code and allow them to copy it.  HTML, CSS and JavaScript.  Found <a href="https://prismjs.com/">prism.js</a>, that does this.  You can download as may or few supported code languages you like, I've chose the web basics - HTML, CSS and JS. There are also a bunch of plugins, like line numbers and copy.
+    </p>
+
+    <p>download the js and css files - choose the highlighting themes (I've gone for Okaidia), and the languages you want supported.  You also need to select any plug-ins - for example to style html on the client side you'll need to escape the html - theres a plugin for that. (so npm install and making it available server side might be a better option - for another noodle another day)</p>
+    <p>plugins i chose:<img src="/public/images/prism-plugins.png" style="width:650px; border: 1px solid black;"></p>
+
+    <p>put prism.js into <code class="language-markup">/app/assets/javascript</code></p>
+    <p>put prism.css into <code class="language-markup">/app/assets/css</code> (note, create the css folder if it doesn't exist, and the gulp script that builds the public files will create a /public/css folder for you)</p>
+
+    <p>reference the prism.css files in the <code class="language-markup">/app/views/includes/head.html</code> file. Add the line: <pre><code class="language-markup">&lt;link href="/public/css/prism.css" media="all" rel="stylesheet" type="text/css" /&gt;</code></pre></p>
+
+    <p>reference the prism.js file in the <code class="language-markup">/app/views/includes/scripts.html</code> file - to have it available to every page, by adding the line <pre><code class="language-markup">&lt;script src="/public/javascripts/prism.js"&gt;&lt;/script&gt;</code></pre></p>
+    <p>or add it only to the pages you need by adding in page in the nunjucks block after your content  (thats what i did in this page)
+      <pre><code class="language-markup">
+&#123;% block pageScripts %&#125;
+  &lt;script src="/public/javascripts/prism.js"&gt;&lt;/script&gt;
+&#123;% endblock %&#125;
+      </code></pre></p>
+
+    <p>I think there is probably a less global way of adding the css - to just the pages you need.  and possibly a more elegant way of adding prism (e.g. npm install and making it available everywhere), or the js file. but the above works - so, good enough for a prototype</p>
+
+    <p>Wrap the code you want highlighting in a pre and code tags and set a class on the code tag. like this:
+      <script type="text/plain" class="language-markup">
+<pre><code class="language-css">
+    your css goes here
+</code></pre>
+      </script>
+      <script type="text/plain" class="language-markup">
+<pre><code class="language-js">
+    your javascript goes here
+</code></pre>
+      </script>
+    </p>
+
+    <p> To do inline highlighting rather than code block, leave out the pre tag</p>
+    <p>for html though (and you'll need a plugin for client side prism script) you need to use a script tag, not a pre and code tag like this:
+      <script type="text/plain" class="language-markup">
+<script type="text/plain" class="language-markup">
+  <h2 class="govuk-heading-l">
+  Try them out
+  </h2>
+  <p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li><a href="autocomplete">alpha gov accessible autocomplete - progressive enhanced (recommended)</a></li>
+    <li><a href="autocomplete-basic">alpha gov accessible autocomplete - basic</a></li>
+    <li><a href="autocomplete-dsennef">extended version of Adam Silvers accessible autocomplete</a> - extended with shortcut buttons, by Darin Senneff (@dsenneff) (<a href="https://codepen.io/dsenneff/pen/PoqONrO">source</a>)</li>
+  </ul>
+  </p>
+&lt;/script&gt;
+      </script>
+
+      <h2 class="govuk-heading-l">examples</h2>
+
+      <h3 class="govuk-heading-m">html</h3>
+
+    <script type="text/plain" class="language-markup">
+<h2 class="govuk-heading-l">
+Try them out
+</h2>
+<p>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="autocomplete">alpha gov accessible autocomplete - progressive enhanced (recommended)</a></li>
+  <li><a href="autocomplete-basic">alpha gov accessible autocomplete - basic</a></li>
+  <li><a href="autocomplete-dsennef">extended version of Adam Silvers accessible autocomplete</a> - extended with shortcut buttons, by Darin Senneff (@dsenneff) (<a href="https://codepen.io/dsenneff/pen/PoqONrO">source</a>)</li>
+</ul>
+</p>
+    </script>
+
+      <h3 class="govuk-heading-m">css</h3>
+
+    <pre><code class="language-css">
+/*! Copyright (c) 2011 by Margaret Calvert & Henrik Kubel. All rights reserved. The font has been customised for exclusive use on gov.uk. This cut is not commercially available. */
+@font-face {
+  font-family: "GDS Transport";
+  src: url("/govuk/assets/fonts/light-94a07e06a1-v2.woff2") format("woff2"), url("/govuk/assets/fonts/light-f591b13f7d-v2.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@media print {
+  .govuk-link, a, .app-step-nav-header__title, .app-step-nav-related__link {
+    font-family: sans-serif;
+  }
+}
+    </code></pre>
+
+      <h3 class="govuk-heading-m">javascript</h3>
+
+      <pre><code class="language-js">
+router.get('/docs/examples/pass-data/vehicle-registration-car1', function (req, res) {
+req.session.data = {
+  "vehicle-registration": "test-plate",
+  "vehicle-type": "Car",
+  "vehicle-features": [
+    "Heated seats",
+    "Radio"
+  ]
+}
+  res.redirect('vehicle-registration')
+})
+    </code></pre>
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+  <script src="/public/javascripts/prism.js"></script>
+{% endblock %}
