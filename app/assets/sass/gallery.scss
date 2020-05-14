@@ -1,7 +1,8 @@
 // style for gallery of: screenshots to look like images
+// desktop or mobile views (1200 or 480 width, 900 high)
 
 
-.gallery-container {
+.gallery-container, .gallery-container-mobile {
   -ms-box-orient: horizontal;
   display: -webkit-box;
   display: -moz-box;
@@ -16,6 +17,19 @@
 /* This container helps the thumbnail behave as if it were an unscaled IMG element */
 .thumbnail-container {
   width: calc(1200px * 0.25);
+  height: calc(900px * 0.25);
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  background: #f9f9f9;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  border: 1px solid grey;
+}
+
+/* This container helps the thumbnail behave as if it were an unscaled IMG element - mobile view */
+.gallery-container-mobile .thumbnail-container {
+  width: calc(480px * 0.25);
   height: calc(900px * 0.25);
   display: inline-block;
   overflow: hidden;
@@ -54,12 +68,20 @@ p.thumbnail-caption {
   -webkit-transform: scale(0.25);
   -webkit-transform-origin: 0 0;
 }
+
 /* This is our screen sizing */
 .thumbnail,
 .thumbnail iframe {
   width: 1200px;
   height: 900px;
 }
+
+/* This is our screen sizing for mobile */
+.gallery-container-mobile .thumbnail, .gallery-container-mobile .thumbnail iframe {
+  width: 480px;
+  height: 900px;
+}
+
 /* This facilitates the fade-in transition instead of flicker. It also helps us maintain the illusion that this is an image, since some webpages will have a preloading animation or wait for some images to download */
 .thumbnail iframe {
   opacity: 0;
