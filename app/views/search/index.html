@@ -1,0 +1,43 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Search
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/index">Home</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Search
+      </h1>
+      <p>would be nice to be able to offer/prototype:
+        <ul class="govuk-list govuk-list--bullet">
+          <li>site search - search the pages/topics within the site/prototype</li>
+          <li>search specific topic, an in service search. like searching a persons name to retrieve a list of people, or search for a case reference</li>
+        </ul>
+      </p>
+      <p>would be nice to be able build the search ui so that:
+        <ul class="govuk-list govuk-list--bullet">
+          <li>you have an input box and a search button, submit it and produce a page of results</li>
+          <li>an autocomplete control, that as you type the list of results appears in the dropdown part</li>
+        </ul>
+      </p>
+      <p>I think i've seen somewhere, which would also be nice, is having a search index that contains alternate names for things (aliases?), so with a name search Andy and Andrew would bring bak people with both</p> 
+
+      <p>try it:
+      	<ul class="govuk-list govuk-list--bullet">
+      		<li><a href="">to do</a></li>
+		      <li><a href="">to do</a></li>
+		    </ul>
+		  </p>
+
+    </div>
+</div>
+
+{% endblock %}
