@@ -9,6 +9,7 @@ a copy of version 9.6.0 of the kit.  Get the latest [prototype kit and instructi
 - accessible autocomplete - also known as typeahead.  extended to remember value stored in session object
 - session data - viewing whats stored, and setting data - so can run preset scenarios
 - syntax highlighting - displaying code (HMTL, CSS and JS) in pages - nicely presented, no fuss, ready to copy
+- dynamic gallery - gallery of your service/app without having to take screenshots.  set up once, done.
 
 
 ## ideas [todo](todo.txt)
