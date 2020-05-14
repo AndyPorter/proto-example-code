@@ -1,0 +1,128 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Gallery - dynamic gallery of pages in your service
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/index">Home</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Gallery of pages
+      </h1>
+      <p>It would be nice to be able to show the prototyped pages for your service without having to screenshot them.
+      </p>
+      <p>gallery of pages from in this app - realpages, not screenshots, iframes made feel like images</p>
+      <p>once set up - there is nothing to do, the gallery maintains itself as you change the pages</p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row govuk-body govuk-!-margin-top-6">
+    <div class="govuk-grid-column-full">
+
+      <h2 class="govuk-heading-l">
+        Example gov service
+      </h2>
+
+      <div class="gallery-container">
+
+        <div>
+          <div class="thumbnail-container" title="Start: register your vehicles luxuriousness service">
+            <div class="thumbnail">
+              <iframe src="car-start" frameborder="0" onload="this.style.opacity = 1;"></iframe>
+            </div>        
+          </div>
+          <p class="thumbnail-caption"><a href="car-start">Start page</a></p>
+        </div>
+
+        <div>
+          <div class="thumbnail-container" title="Registration number">
+            <div class="thumbnail">
+              <iframe src="/docs/examples/pass-data/vehicle-registration" frameborder="0" onload="this.style.opacity = 1;"></iframe>
+            </div>
+          </div>
+          <p class="thumbnail-caption">Registration number</p>
+        </div>
+
+        <div>
+          <div class="thumbnail-container" title="Vehicle type">
+            <div class="thumbnail">
+              <iframe src="/docs/examples/pass-data/vehicle-type" frameborder="0" onload="this.style.opacity = 1"></iframe>
+            </div>
+          </div>
+          <p class="thumbnail-caption">Vehicle type</p>
+        </div>
+
+        <div>
+          <div class="thumbnail-container" title="Luxuriousness">
+            <div class="thumbnail">
+              <iframe src="/docs/examples/pass-data/vehicle-features" frameborder="0" onload="this.style.opacity = 1"></iframe>
+            </div>
+          </div>
+          <p class="thumbnail-caption">Interior luxury features</p>
+        </div>
+
+        <div>
+          <div class="thumbnail-container" title="Check your answers">
+            <div class="thumbnail">
+              <iframe src="/docs/examples/pass-data/vehicle-check-answers" frameborder="0" onload="this.style.opacity = 1;"></iframe>
+            </div>
+          </div>
+          <p class="thumbnail-caption">Check your answers</p>
+        </div>
+
+      </div>    
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row govuk-body govuk-!-margin-top-6">
+    <div class="govuk-grid-column-full"> 
+
+      <h2 class="govuk-heading-l">
+        Index pages in this app
+      </h2>
+
+      <div class="gallery-container">
+
+        <div class="thumbnail-container" title="Branching with checkboxes">
+          <div class="thumbnail">
+            <iframe src="/checkboxes/" frameborder="0" onload="this.style.opacity = 1;"></iframe>
+          </div>
+        </div>
+
+        <div class="thumbnail-container" title="Autocomplete">
+          <div class="thumbnail">
+            <iframe src="/autocomplete/" frameborder="0" onload="this.style.opacity = 1"></iframe>
+          </div>
+        </div>
+
+        <div class="thumbnail-container" title="Session variables">
+          <div class="thumbnail">
+            <iframe src="/session/" frameborder="0" onload="this.style.opacity = 1"></iframe>
+          </div>
+        </div>
+
+        <div class="thumbnail-container" title="Syntax higlighting">
+          <div class="thumbnail">
+            <iframe src="/syntax-highlighting/" frameborder="0" onload="this.style.opacity = 1;"></iframe>
+          </div>
+        </div>
+
+      </div>
+
+
+
+
+
+
+    </div>
+</div>
+
+{% endblock %}
