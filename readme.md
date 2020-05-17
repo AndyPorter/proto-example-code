@@ -10,6 +10,7 @@ a copy of version 9.6.0 of the kit.  Get the latest [prototype kit and instructi
 - session data - viewing whats stored, and setting data - so can run preset scenarios
 - syntax highlighting - displaying code (HMTL, CSS and JS) in pages - nicely presented, no fuss, ready to copy
 - dynamic gallery - gallery of your service/app without having to take screenshots.  set up once, done.
+- form validation, gov.uk design system form validation, error messages and summary.
 
 
 ## ideas [todo](todo.txt)
