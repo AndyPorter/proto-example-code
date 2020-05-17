@@ -1,4 +1,4 @@
 todo:
 
 - search - look at NHS design system
-- css only scrollable table (Adim Silver tweet)
+- css only scrollable table (Adam Silver tweet)
